@@ -162,6 +162,7 @@
     CGRect frame = self.frame;
     frame.size.height = buttonY;
     self.frame = frame;
+    self.contentSize = CGSizeMake(self.frame.size.width, (buttonHeight + BORDER) * buttonsMutableArray.count);
     
     popoverController.contentView = self;
     popoverController.cornerRadius = self.cornerRadius;

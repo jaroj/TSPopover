@@ -10,7 +10,7 @@
 
 @class TSPopoverController;
 
-@interface TSActionSheet : UIView
+@interface TSActionSheet : UIScrollView
 {
     TSPopoverController *popoverController ;
     NSMutableArray *buttonsMutableArray;
