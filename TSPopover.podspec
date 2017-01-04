@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
-  s.source       = { git: 'https://github.com/jaroj/TSPopover.git', commit: '26d491d066baf41e151d57691e9aa5d89e133503' }
+  s.source       = { git: 'https://github.com/jaroj/TSPopover.git' }
   s.source_files  = 'TSPopover', 'TSPopover/**/*.{h,m}'
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
