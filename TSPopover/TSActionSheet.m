@@ -14,7 +14,7 @@
 #define BORDER 5
 #define TITLE_SHADOW_OFFSET   CGSizeMake(0, -1)
 #define BUTTON_HEIGHT 35
-static int buttonHeight = BUTTON_HEIGHT;
+static int ButtonHeight = BUTTON_HEIGHT;
 
 @implementation TSActionSheet
 
@@ -30,7 +30,7 @@ static int buttonHeight = BUTTON_HEIGHT;
 
 + (void) setButtonHeight:(int)value
 {
-    buttonHeight = value;
+    ButtonHeight = value;
 }
 
 - (id)initWithTitle:(NSString *)title 
