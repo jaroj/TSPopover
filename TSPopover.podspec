@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = 'TSPopover'
-  s.version      = '0.0.1'
+  s.version      = '0.0.2'
   s.summary      = 'UIPopover like UI for iPhone with scrollView'
   s.description  = <<-DESC
                      Popover with a scrollView
