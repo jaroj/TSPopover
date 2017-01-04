@@ -14,6 +14,7 @@
 #define BORDER 5
 #define TITLE_SHADOW_OFFSET   CGSizeMake(0, -1)
 #define BUTTON_HEIGHT 35
+static int ButtonHeight = BUTTON_HEIGHT;
 
 @implementation TSActionSheet
 
@@ -26,6 +27,11 @@
 @synthesize titleShadow = _titleShadow;
 @synthesize titleShadowColor = _titleShadowColor;
 @synthesize titleShadowOffset = _titleShadowOffset;
+
++ (void) setButtonHeight:(int)value
+{
+    buttonHeight = value;
+}
 
 - (id)initWithTitle:(NSString *)title 
 {
@@ -122,7 +128,7 @@
 - (void) buildButtons
 {
     NSUInteger i = 1;
-    NSUInteger buttonHeight = BUTTON_HEIGHT;
+    NSUInteger buttonHeight = ButtonHeight;
     NSUInteger buttonY = BORDER;
     for (NSArray *button in buttonsMutableArray)
     {
@@ -212,7 +218,7 @@
     //Size
     float buttonWidth = self.frame.size.width - (BORDER*2);
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(buttonWidth, BUTTON_HEIGHT), NO, 0);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(buttonWidth, ButtonHeight), NO, 0);
     
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -231,17 +237,17 @@
     
     
     //// Rounded Rectangle Drawing
-    UIBezierPath* roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, buttonWidth, BUTTON_HEIGHT) cornerRadius: self.cornerRadius];
+    UIBezierPath* roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, buttonWidth, ButtonHeight) cornerRadius: self.cornerRadius];
     [color setFill];
     [roundedRectanglePath fill];
     
     
     if(self.buttonGradient){
         //// GradientPath Drawing
-        UIBezierPath* gradientPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, buttonWidth, BUTTON_HEIGHT) cornerRadius: self.cornerRadius];
+        UIBezierPath* gradientPath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, buttonWidth, ButtonHeight) cornerRadius: self.cornerRadius];
         CGContextSaveGState(context);
         [gradientPath addClip];
-        CGContextDrawLinearGradient(context, gradient, CGPointMake(buttonWidth/2, 0), CGPointMake(buttonWidth/2, BUTTON_HEIGHT), 0);
+        CGContextDrawLinearGradient(context, gradient, CGPointMake(buttonWidth/2, 0), CGPointMake(buttonWidth/2, ButtonHeight), 0);
         CGContextRestoreGState(context);
     }
     
